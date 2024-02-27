@@ -87,16 +87,14 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="hidden md:flex gap-4 w-1/3 ">
-        <Link href="#">
+        <Link href="https://github.com/INDIANgaurav" rel="noopener noreferrer" target="_blank">
           <Image src="/github.png" alt="" width={24} height={24} />
         </Link>
-        <Link href="#">
-          <Image src="/facebook.png" alt="" width={24} height={24} />
-        </Link>
-        <Link href="#">
+      
+        <Link href="https://www.instagram.com/indian_gaurav_parasar_/" rel="noopener noreferrer" target="_blank" >
           <Image src="/instagram.png" alt="" width={24} height={24} />
         </Link>
-        <Link href="#">
+        <Link href="https://www.linkedin.com/in/gaurav-parasar" rel="noopener noreferrer" target="_blank">
           <Image src="/linkedin.png" alt="" width={24} height={24} />
         </Link>
       </div>
@@ -125,18 +123,22 @@ const Navbar = () => {
         </button>
         {/* MENU LIST */}
         {open && (
-          <motion.div variants={listVariants} initial="closed" animate="opened"
+          <motion.div
+            variants={listVariants}
+            initial="closed"
+            animate="opened"
             className="absolute top-0 left-0 w-screen h-screen bg-black text-white
              flex flex-col items-center 
                         justify-center gap-8 text-4xl z-40 "
           >
             {links.map((link) => {
               return (
-                <motion.div  variants={listItemVariants} className=""    key={link.title}>
-
-                <Link href={link.url} >
-                  {link.title}
-                </Link>
+                <motion.div
+                  variants={listItemVariants}
+                  className=""
+                  key={link.title}
+                >
+                  <Link href={link.url}>{link.title}</Link>
                 </motion.div>
               );
             })}
